@@ -1,10 +1,12 @@
 package com.chinesedreamer.toolkit.schema;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.chinesedreamer.toolkit.schema.bean.ExcelProcesser;
+import com.chinesedreamer.toolkit.schema.excel.bean.ExcelProcesserConfiguration;
+import com.chinesedreamer.toolkit.schema.excel.bean.ExcelTitleConfiguration;
 
 /** 
  * Description: 
@@ -18,9 +20,11 @@ public class SchemaTest {
 	@Test
 	public void testSchema(){
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("ExcelProcesserTest.xml");
-		ExcelProcesser ep = (ExcelProcesser)applicationContext.getBean("cutesource");
-		System.out.println(ep.getId());  
-		System.out.println(ep.getName());  
-		System.out.println(ep.getAge()); 
+		ExcelProcesserConfiguration ep = (ExcelProcesserConfiguration)applicationContext.getBean("config");
+		Assert.assertNotNull(ep);
+		System.out.println(ep.toString());
+		for (ExcelTitleConfiguration titleConfiguration : ep.getTitleConfigurations()) {
+			System.out.println(titleConfiguration.toString());
+		}
 	}
 }

@@ -1,1 +1,1 @@
-http\://www.chinesedreamer.com/schema/ep=com.chinesedreamer.toolkit.schema.handler.ExcelProcesserNameHandler
+http\://www.chinesedreamer.com/schema/excel=com.chinesedreamer.toolkit.schema.excel.handler.ExcelProcesserNameHandler

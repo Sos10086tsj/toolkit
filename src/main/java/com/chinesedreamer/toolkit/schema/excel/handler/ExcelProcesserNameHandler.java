@@ -1,8 +1,8 @@
-package com.chinesedreamer.toolkit.schema.handler;
+package com.chinesedreamer.toolkit.schema.excel.handler;
 
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
-import com.chinesedreamer.toolkit.schema.parser.ExcelProcesserBeanDefinitionParser;
+import com.chinesedreamer.toolkit.schema.excel.parser.ExcelProcesserBeanDefinitionParser;
 
 /** 
  * Description: 
@@ -15,7 +15,8 @@ public class ExcelProcesserNameHandler extends NamespaceHandlerSupport{
 
 	@Override
 	public void init() {
-		registerBeanDefinitionParser("excelProcesser", new ExcelProcesserBeanDefinitionParser());
+		registerBeanDefinitionParser("config", new ExcelProcesserBeanDefinitionParser());
+		registerBeanDefinitionParser("title", new ExcelProcesserBeanDefinitionParser());
 	}
 
 }

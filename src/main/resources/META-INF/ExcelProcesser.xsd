@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="http://www.chinesedreamer.com/schema/ep"  
+<xsd:schema xmlns="http://www.chinesedreamer.com/schema/excel"  
         xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
         xmlns:beans="http://www.springframework.org/schema/beans"  
-        targetNamespace="http://www.chinesedreamer.com/schema/ep"  
+        targetNamespace="http://www.chinesedreamer.com/schema/excel"  
         elementFormDefault="qualified"  
         attributeFormDefault="unqualified">  
   
     <xsd:import namespace="http://www.springframework.org/schema/beans"/>  
-  
-    
-    <xsd:element name="excelProcesser">  
-        <xsd:complexType>  
+  	
+  	 <xsd:element name="title">
+  		<xsd:complexType>
+  	 		<xsd:complexContent>  
+  	 		<xsd:extension base="beans:identifiedType">
+  				<xsd:attribute name="column" type="xsd:int" use="required"/>
+    			<xsd:attribute name="row" type="xsd:int"/>
+    			<xsd:attribute name="targetProperty" type="xsd:string" use="required"/>
+    			<xsd:attribute name="typeHandler" type="xsd:string"/>
+    			</xsd:extension>
+    		</xsd:complexContent>
+  		</xsd:complexType> 
+  	</xsd:element>
+      
+    <xsd:element name="config">
+    	<xsd:complexType>  
             <xsd:complexContent>  
                 <xsd:extension base="beans:identifiedType">  
-                    <xsd:attribute name="name" type="xsd:string" />  
-                    <xsd:attribute name="age" type="xsd:int" />  
+                	<xsd:sequence>
+                    	<xsd:element ref="title" minOccurs="1" maxOccurs="unbounded"/> 
+                    </xsd:sequence>
+                    <xsd:attribute name="targetEntity" type="xsd:string" use="required"/>  
+                    <xsd:attribute name="titleRow" type="xsd:int" default="0"/>   
                 </xsd:extension>  
             </xsd:complexContent>  
-        </xsd:complexType>  
+        </xsd:complexType> 
     </xsd:element> 
     
 </xsd:schema>
