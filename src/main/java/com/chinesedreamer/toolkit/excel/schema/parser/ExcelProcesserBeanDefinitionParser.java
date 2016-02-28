@@ -1,4 +1,4 @@
-package com.chinesedreamer.toolkit.schema.excel.parser;
+package com.chinesedreamer.toolkit.excel.schema.parser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +9,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.util.xml.DomUtils;
 import org.w3c.dom.Element;
 
-import com.chinesedreamer.toolkit.schema.excel.bean.ExcelProcesserConfiguration;
-import com.chinesedreamer.toolkit.schema.excel.bean.ExcelTitleConfiguration;
+import com.chinesedreamer.toolkit.excel.schema.bean.ExcelProcesserConfiguration;
+import com.chinesedreamer.toolkit.excel.schema.bean.ExcelTitleConfiguration;
 
 /**
  * Description:

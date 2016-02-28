@@ -1,4 +1,4 @@
-package com.chinesedreamer.toolkit.schema.excel.bean;
+package com.chinesedreamer.toolkit.excel.schema.bean;
 /** 
  * Description: excel title配置，用来确定没列的title和value读取方法
  * @author Paris Tao

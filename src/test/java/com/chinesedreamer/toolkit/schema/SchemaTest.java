@@ -5,8 +5,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.chinesedreamer.toolkit.schema.excel.bean.ExcelProcesserConfiguration;
-import com.chinesedreamer.toolkit.schema.excel.bean.ExcelTitleConfiguration;
+import com.chinesedreamer.toolkit.excel.schema.bean.ExcelProcesserConfiguration;
+import com.chinesedreamer.toolkit.excel.schema.bean.ExcelTitleConfiguration;
 
 /** 
  * Description: 

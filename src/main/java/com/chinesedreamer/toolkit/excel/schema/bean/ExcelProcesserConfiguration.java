@@ -1,4 +1,4 @@
-package com.chinesedreamer.toolkit.schema.excel.bean;
+package com.chinesedreamer.toolkit.excel.schema.bean;
 
 import java.util.List;
 

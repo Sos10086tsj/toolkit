@@ -1,8 +1,8 @@
-package com.chinesedreamer.toolkit.schema.excel.handler;
+package com.chinesedreamer.toolkit.excel.schema.handler;
 
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
-import com.chinesedreamer.toolkit.schema.excel.parser.ExcelProcesserBeanDefinitionParser;
+import com.chinesedreamer.toolkit.excel.schema.parser.ExcelProcesserBeanDefinitionParser;
 
 /** 
  * Description: 

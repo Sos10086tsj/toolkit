@@ -1,11 +1,11 @@
-package com.chinesedreamer.toolkit.schema.excel.parser;
+package com.chinesedreamer.toolkit.excel.schema.parser;
 
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.xml.AbstractSingleBeanDefinitionParser;
 import org.springframework.util.StringUtils;
 import org.w3c.dom.Element;
 
-import com.chinesedreamer.toolkit.schema.excel.bean.ExcelTitleConfiguration;
+import com.chinesedreamer.toolkit.excel.schema.bean.ExcelTitleConfiguration;
 
 /**
  * Description:

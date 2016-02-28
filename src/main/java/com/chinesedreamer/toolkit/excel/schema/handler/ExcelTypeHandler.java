@@ -1,4 +1,4 @@
-package com.chinesedreamer.toolkit.schema.excel.handler;
+package com.chinesedreamer.toolkit.excel.schema.handler;
 /** 
  * Description: 
  * @author Paris Tao
