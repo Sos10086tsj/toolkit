@@ -12,33 +12,39 @@ import java.util.List;
 public class ExcelProcesserConfiguration extends AbstractExcelProcesserConfiguration{
 	
 	private String targetEntity;//目标类名
-	private int titleRow;//title行号，默认同行。如果类名不在同行，通过 ReadExcelTitleConfiguration.row 设置
+	private int startRow;//开始读取的行号，默认1
+	private int sheetIndex;
 	private List<ExcelTitleConfiguration> titleConfigurations;
 	public String getTargetEntity() {
 		return targetEntity;
 	}
-	public void setTargetEntity(String targetEntity) {
-		this.targetEntity = targetEntity;
+	public int getStartRow() {
+		return startRow;
 	}
-	public int getTitleRow() {
-		return titleRow;
-	}
-	public void setTitleRow(int titleRow) {
-		this.titleRow = titleRow;
+	public int getSheetIndex() {
+		return sheetIndex;
 	}
 	public List<ExcelTitleConfiguration> getTitleConfigurations() {
 		return titleConfigurations;
 	}
-	public void setTitleConfigurations(
-			List<ExcelTitleConfiguration> titleConfigurations) {
+	public void setTargetEntity(String targetEntity) {
+		this.targetEntity = targetEntity;
+	}
+	public void setStartRow(int startRow) {
+		this.startRow = startRow;
+	}
+	public void setSheetIndex(int sheetIndex) {
+		this.sheetIndex = sheetIndex;
+	}
+	public void setTitleConfigurations(List<ExcelTitleConfiguration> titleConfigurations) {
 		this.titleConfigurations = titleConfigurations;
 	}
 	@Override
 	public String toString() {
-		return "ExcelProcesserConfiguration [targetEntity=" + targetEntity
-				+ ", titleRow=" + titleRow + ", titleConfigurations="
-				+ titleConfigurations + "]";
+		return "ExcelProcesserConfiguration [targetEntity=" + targetEntity + ", startRow=" + startRow + ", sheetIndex="
+				+ sheetIndex + ", titleConfigurations=" + titleConfigurations + "]";
 	}
+	
 	
 	
 }

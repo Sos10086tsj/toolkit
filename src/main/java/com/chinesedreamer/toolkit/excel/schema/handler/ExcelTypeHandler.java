@@ -1,4 +1,9 @@
 package com.chinesedreamer.toolkit.excel.schema.handler;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
 /** 
  * Description: 
  * @author Paris Tao
@@ -7,5 +12,5 @@ package com.chinesedreamer.toolkit.excel.schema.handler;
  * Copyright:   Copyright (c)2015
  */
 public interface ExcelTypeHandler {
-	public void handle();
+	public void handle(Workbook workbook, Sheet sheet, Row row, Object model);
 }

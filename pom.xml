@@ -15,6 +15,10 @@
 		<spring.version>4.0.0.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<fastjson.version>1.1.37</fastjson.version>
+		<org.apache.poi.version>3.11</org.apache.poi.version>
+		<org.apache.commons.version>3.3.2</org.apache.commons.version>
+		<log4j.version>1.2.14</log4j.version>
+		<org.slf4j.version>1.7.2</org.slf4j.version>
 	</properties>
 
 	<dependencies>
@@ -55,6 +59,34 @@
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
+		
+		<!-- poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${org.apache.poi.version}</version>
+		</dependency>
+		
+		<!-- apache commoms -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${org.apache.commons.version}</version>
+		</dependency>
+		
+		<!-- log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<!-- slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j.version}</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

@@ -1,5 +1,7 @@
 package com.chinesedreamer.toolkit.excel.parse.service;
 
+import java.util.List;
+
 import com.chinesedreamer.toolkit.excel.parse.entity.Excel;
 import com.chinesedreamer.toolkit.excel.schema.bean.AbstractExcelProcesserConfiguration;
 
@@ -17,5 +19,5 @@ public interface ExcelReaderService {
 	 * @param configuration
 	 * @return
 	 */
-	public Object readExcel(Excel excel, AbstractExcelProcesserConfiguration configuration);
+	public List<Object> readExcel(Excel excel, AbstractExcelProcesserConfiguration configuration);
 }

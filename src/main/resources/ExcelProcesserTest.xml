@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
         http://www.chinesedreamer.com/schema/excel http://www.chinesedreamer.com/schema/excel.xsd">  
     
-    <excel:config id="config" targetEntity="com.test.class" titleRow="0">
+    <excel:config id="config" targetEntity="com.test.class" startRow="1">
     	<excel:title id="title_1" column="1" row="2" targetProperty="name" typeHandler="com.test.typeHandler"/>
     	<excel:title id="title_2" column="1" row="2" targetProperty="name" typeHandler="com.test.typeHandler"/>
     </excel:config>
