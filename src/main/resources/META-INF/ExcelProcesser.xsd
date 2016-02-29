@@ -30,7 +30,8 @@
                     </xsd:sequence>
                     <xsd:attribute name="targetEntity" type="xsd:string" use="required"/>  
                     <xsd:attribute name="startRow" type="xsd:int" default="1"/>
-                    <xsd:attribute name="sheetIndex" type="xsd:int" default="0"/>
+                    <xsd:attribute name="sheetIndexs" type="xsd:string" default="0"/>
+                    <xsd:attribute name="sheetNames" type="xsd:string"/>
                 </xsd:extension>  
             </xsd:complexContent>  
         </xsd:complexType> 

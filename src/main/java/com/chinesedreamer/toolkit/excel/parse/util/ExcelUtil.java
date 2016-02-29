@@ -1,5 +1,6 @@
 package com.chinesedreamer.toolkit.excel.parse.util;
 
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
@@ -32,7 +33,10 @@ public class ExcelUtil {
 	 * @return
 	 */
 	public static Object getCellValue(Cell cell, Class<?> clazz) {
-		//TODO
+		if (cell == null) {
+			return null;
+		}
+		cell.getCellStyle().equals(HSSFCellStyle.)
 		return null;
 	}
 }

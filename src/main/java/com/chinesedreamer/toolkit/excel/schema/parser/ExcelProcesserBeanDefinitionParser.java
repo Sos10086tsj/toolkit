@@ -29,15 +29,19 @@ public class ExcelProcesserBeanDefinitionParser extends
 	protected void doParse(Element element, BeanDefinitionBuilder bean) {
 		String targetEntity = element.getAttribute("targetEntity");
 		String titleRow = element.getAttribute("titleRow");
-		String sheetIndex = element.getAttribute("sheetIndex");
+		String sheetIndexs = element.getAttribute("sheetIndex");
+		String sheetNames = element.getAttribute("sheetNames");
 		if (StringUtils.hasText(targetEntity)) {  
             bean.addPropertyValue("targetEntity", targetEntity);  
         }
 		if (StringUtils.hasText(titleRow)) {  
             bean.addPropertyValue("titleRow", Integer.valueOf(titleRow));  
         }
-		if (StringUtils.hasText(sheetIndex)) {  
-            bean.addPropertyValue("sheetIndex", Integer.valueOf(sheetIndex));  
+		if (StringUtils.hasText(sheetIndexs)) {  
+            bean.addPropertyValue("sheetIndexs", sheetIndexs);  
+        }
+		if (StringUtils.hasText(sheetNames)) {  
+            bean.addPropertyValue("sheetNames", sheetNames);  
         }
 		
 		List<ExcelTitleConfiguration> titleConfigurations = new ArrayList<ExcelTitleConfiguration>();

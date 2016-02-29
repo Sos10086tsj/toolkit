@@ -62,20 +62,21 @@ public class Excel03ReaderServiceImpl implements ExcelReaderService{
 		Workbook workbook = null;
 		try {
 			workbook = new HSSFWorkbook(new FileInputStream(excel.getFile()));
-			Sheet sheet = workbook.getSheetAt(configuration.getSheetIndex());
-			int rowNum = sheet.getLastRowNum();
-			for (int i = configuration.getStartRow(); i < rowNum; i++) {
-				//逐行解析数据
-				Row row = sheet.getRow(i);
-				if (null == row || ExcelUtil.isEmptyRow(row)) {
-					continue;
-				}
-				Object object = this.readRowData(workbook, sheet, row, configuration, titleMap);
-				if (null != object) {
-					datas.add(object);
+			//获取sheet
+			if (StringUtils.isNotEmpty(configuration.getSheetIndexs())) {
+				String[] sheetIndexs = configuration.getSheetIndexs().split(",");
+				for (String sheetIndex : sheetIndexs) {
+					Sheet sheet = workbook.getSheetAt(Integer.valueOf(sheetIndex));
+					this.parseModel(datas, workbook, sheet, configuration, titleMap);
 				}
 			}
-			
+			if (StringUtils.isNotEmpty(configuration.getSheetNames())) {
+				String[] sheetNames = configuration.getSheetNames().split(",");
+				for (String sheetName : sheetNames) {
+					Sheet sheet = workbook.getSheet(sheetName);
+					this.parseModel(datas, workbook, sheet, configuration, titleMap);
+				}
+			}
 		} catch (Exception e) {
 			this.logger.error("",e);
 		}finally {
@@ -88,6 +89,21 @@ public class Excel03ReaderServiceImpl implements ExcelReaderService{
 			}
 		}
 		return datas;
+	}
+	
+	private void parseModel(List<Object> datas,Workbook workbook,Sheet sheet,ExcelProcesserConfiguration configuration,Map<Integer, ExcelTitleConfiguration> titleMap) {
+		int rowNum = sheet.getLastRowNum();
+		for (int i = configuration.getStartRow(); i < rowNum; i++) {
+			//逐行解析数据
+			Row row = sheet.getRow(i);
+			if (null == row || ExcelUtil.isEmptyRow(row)) {
+				continue;
+			}
+			Object object = this.readRowData(workbook, sheet, row, configuration, titleMap);
+			if (null != object) {
+				datas.add(object);
+			}
+		}
 	}
 	
 	/**
