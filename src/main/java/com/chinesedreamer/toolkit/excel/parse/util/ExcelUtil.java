@@ -90,6 +90,8 @@ public class ExcelUtil {
 			return Long.valueOf(tempValue);
 		}else if (clazz.getName().equals("java.lang.BigDecimal")) {
 			return new BigDecimal(tempValue);
+		}else if (clazz.getName().equals("java.lang.String")) {
+			return tempValue;
 		}else {
 			logger.error("Not supported type of {} for formula cell.", clazz.getName());
 			return null;

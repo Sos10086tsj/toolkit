@@ -28,14 +28,14 @@ public class ExcelProcesserBeanDefinitionParser extends
 
 	protected void doParse(Element element, BeanDefinitionBuilder bean) {
 		String targetEntity = element.getAttribute("targetEntity");
-		String titleRow = element.getAttribute("titleRow");
+		String startRow = element.getAttribute("startRow");
 		String sheetIndexs = element.getAttribute("sheetIndex");
 		String sheetNames = element.getAttribute("sheetNames");
 		if (StringUtils.hasText(targetEntity)) {  
             bean.addPropertyValue("targetEntity", targetEntity);  
         }
-		if (StringUtils.hasText(titleRow)) {  
-            bean.addPropertyValue("titleRow", Integer.valueOf(titleRow));  
+		if (StringUtils.hasText(startRow)) {  
+            bean.addPropertyValue("startRow", Integer.valueOf(startRow));  
         }
 		if (StringUtils.hasText(sheetIndexs)) {  
             bean.addPropertyValue("sheetIndexs", sheetIndexs);  
@@ -58,11 +58,6 @@ public class ExcelProcesserBeanDefinitionParser extends
 		String column = titleElement.getAttribute("column");
 		if (StringUtils.hasText(column)) {
 			titleConfiguration.setColumn(Integer.valueOf(column));
-		}
-		
-		String row = titleElement.getAttribute("row");
-		if (StringUtils.hasText(row)) {
-			titleConfiguration.setRow(Integer.valueOf(row));
 		}
 		
 		String targetProperty = titleElement.getAttribute("targetProperty");

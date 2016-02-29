@@ -6,9 +6,9 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
         http://www.chinesedreamer.com/schema/excel http://www.chinesedreamer.com/schema/excel.xsd">  
     
-    <excel:config id="config" targetEntity="com.test.class" startRow="1" sheetIndexs="0,1" sheetNames="辽宁,宁波">
-    	<excel:title id="title_1" column="1" row="2" targetProperty="name" typeHandler="com.test.typeHandler"/>
-    	<excel:title id="title_2" column="1" row="2" targetProperty="name" typeHandler="com.test.typeHandler"/>
+    <excel:config id="config" targetEntity="com.chinesedreamer.toolkit.schema.TestModel" startRow="1" sheetNames="辽宁,宁波">
+    	<excel:title id="title_1" column="0" targetProperty="name" />
+    	<excel:title id="title_2" column="4" targetProperty="deliveryDate" typeHandler="com.chinesedreamer.toolkit.schema.DeliveryDateHandler"/>
     </excel:config>
   
 </beans>

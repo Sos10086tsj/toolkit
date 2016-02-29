@@ -26,7 +26,7 @@ public class ExcelReadServiceFactory {
 
 	public static ExcelReaderService getInstance(Excel excel){
 		if (excel instanceof Excel03) {
-			return excel03ReaderService;
+			return getExcel03ReaderService();
 		}
 		return null;
 	}

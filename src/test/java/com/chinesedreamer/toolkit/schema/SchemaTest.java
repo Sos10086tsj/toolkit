@@ -1,12 +1,18 @@
 package com.chinesedreamer.toolkit.schema;
 
+import java.io.File;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import com.chinesedreamer.toolkit.excel.parse.ExcelReader;
+import com.chinesedreamer.toolkit.excel.parse.entity.Excel;
+import com.chinesedreamer.toolkit.excel.parse.entity.Excel03;
 import com.chinesedreamer.toolkit.excel.schema.bean.ExcelProcesserConfiguration;
-import com.chinesedreamer.toolkit.excel.schema.bean.ExcelTitleConfiguration;
 
 /** 
  * Description: 
@@ -19,12 +25,16 @@ public class SchemaTest {
 
 	@Test
 	public void testSchema(){
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("ExcelProcesserTest.xml");
+		ApplicationContext applicationContext = new FileSystemXmlApplicationContext("H:\\projects\\toolkit\\src\\test\\resoueces\\ExcelProcesserTest.xml");
+		//ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("ExcelProcesserTest.xml");
 		ExcelProcesserConfiguration ep = (ExcelProcesserConfiguration)applicationContext.getBean("config");
 		Assert.assertNotNull(ep);
-		System.out.println(ep.toString());
-		for (ExcelTitleConfiguration titleConfiguration : ep.getTitleConfigurations()) {
-			System.out.println(titleConfiguration.toString());
+		Excel excel = new Excel03(new File("C:\\Users\\Paris\\Desktop\\江北（新）.xls"));
+		List<Object> datas = ExcelReader.readExcel(excel, ep);
+		Assert.assertNotNull(datas);
+		for (Object object : datas) {
+			TestModel tm = (TestModel)object;
+			System.out.println(tm);
 		}
 	}
 }

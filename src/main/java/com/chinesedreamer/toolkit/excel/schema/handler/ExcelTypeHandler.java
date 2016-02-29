@@ -1,8 +1,6 @@
 package com.chinesedreamer.toolkit.excel.schema.handler;
 
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.Cell;
 
 /** 
  * Description: 
@@ -12,5 +10,5 @@ import org.apache.poi.ss.usermodel.Workbook;
  * Copyright:   Copyright (c)2015
  */
 public interface ExcelTypeHandler {
-	public void handle(Workbook workbook, Sheet sheet, Row row, Object model);
+	public Object handle(Cell cell);
 }
