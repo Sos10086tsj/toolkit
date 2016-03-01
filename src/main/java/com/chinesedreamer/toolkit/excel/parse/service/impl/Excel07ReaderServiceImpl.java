@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,10 +35,10 @@ import com.chinesedreamer.toolkit.excel.schema.exception.ExcelHandlerNotDefinedE
  * @version 1.0beta
  * @date 2016年2月28日 上午9:44:19 Copyright: Copyright (c)2015
  */
-public class Excel03ReaderServiceImpl implements ExcelReaderService {
+public class Excel07ReaderServiceImpl implements ExcelReaderService {
 
 	private Logger logger = LoggerFactory
-			.getLogger(Excel03ReaderServiceImpl.class);
+			.getLogger(Excel07ReaderServiceImpl.class);
 
 	@Override
 	public List<Object> readExcel(Excel excel,
@@ -66,7 +66,7 @@ public class Excel03ReaderServiceImpl implements ExcelReaderService {
 		List<Object> datas = new ArrayList<Object>();
 		Workbook workbook = null;
 		try {
-			workbook = new HSSFWorkbook(new FileInputStream(excel.getFile()));
+			workbook = new XSSFWorkbook(new FileInputStream(excel.getFile()));
 			// 获取sheet
 			if (StringUtils.isNotEmpty(configuration.getSheetIndexs())) {
 				String[] sheetIndexs = configuration.getSheetIndexs()
